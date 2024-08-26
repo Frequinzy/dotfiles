@@ -1,0 +1,9 @@
+[user]
+	email = emilhtz@gmail.com
+	name = Emil Hultcrantz
+[pull]
+	rebase = false
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
