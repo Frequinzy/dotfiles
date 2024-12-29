@@ -1,0 +1,30 @@
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Super|Shift"
+
+[terminal]
+
+[font]
+size = 10.0
+
+[font.bold]
+family = "VictorMono Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "VictorMono Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "VictorMono Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "VictorMono Nerd Font"
+style = "Regular"
+
+[keyboard]
+
+[terminal.shell]
+program = "/bin/bash"
