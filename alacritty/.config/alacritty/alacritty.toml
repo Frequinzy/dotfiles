@@ -27,4 +27,4 @@ style = "Regular"
 [keyboard]
 
 [terminal.shell]
-program = "/bin/bash"
+program = "/bin/fish"
