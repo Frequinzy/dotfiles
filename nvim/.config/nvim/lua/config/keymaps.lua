@@ -29,3 +29,10 @@ vim.keymap.set("v", "<leader>D", "\"_D")
 
 -- Open diagnostics
 vim.keymap.set("n", "<leader>v", "<cmd> lua vim.diagnostic.open_float() <CR>", {desc="Open diagnostic in float window"})
+
+-- Navigate quickfixlist
+vim.keymap.set("n", "]q", ":cnext<CR>", {noremap=true, silent=true, desc="Next Quickfix item" })
+vim.keymap.set("n", "[q", ":cprev<CR>", {noremap=true, silent=true, desc="Previous Quickfix item" })
+
+vim.keymap.set("n", "<leader>qo", ":copen<CR>", {noremap=true, silent=true, desc="Previous Quickfix item" })
+vim.keymap.set("n", "<leader>qc", ":cclose<CR>", {noremap=true, silent=true, desc="Previous Quickfix item" })
