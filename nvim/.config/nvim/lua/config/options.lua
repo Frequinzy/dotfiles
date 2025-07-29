@@ -1,43 +1,38 @@
--- Space as leader
-vim.g.mapleader = " "
+-- Set leader keys
+vim.g.mapleader = ' '
+vim.g.maplocalleadet = '\\'
 
-vim.opt.mouse = ""
+-- Disable mouse
+vim.o.mouse = ''
 
-vim.opt.nu = true
-vim.opt.relativenumber = true
+-- Set line numbers
+vim.o.number = true
+vim.o.relativenumber = true
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+-- Set indentation
+vim.o.expandtab = true
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
+-- Leave at Default (See `:h ts` for why)
+vim.o.tabstop = 8
 
-vim.opt.smartindent = true
+-- Disable text wrapping
+vim.o.wrap = false
 
-vim.opt.wrap = false
-vim.opt.textwidth = 0
+-- Improve searching
+vim.o.hlsearch = false
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+-- Set a scrolloff context
+vim.o.scrolloff = 8
 
-vim.opt.termguicolors = true
+-- Set a signcolumn to avoid shifting as signs are added
+vim.o.signcolumn = 'yes'
 
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
+-- Set colorcolumn
+vim.o.colorcolumn = '80'
 
-vim.opt.updatetime = 50
+-- Set rounded border on floats
+vim.o.winborder = 'rounded'
 
-vim.opt.colorcolumn = "80"
-
-vim.diagnostic.config({
-    update_in_insert = true,
-    float = {
-        focusable = false,
-        style = "minimal",
-        border = "rounded",
-        source = "always",
-        header = "",
-        prefix = "",
-    },
-})
