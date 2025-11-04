@@ -4,6 +4,7 @@
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('jdtls')
+vim.lsp.enable('clojure_lsp')
 
 -- Set up LSP functionality
 vim.api.nvim_create_autocmd('LspAttach', {

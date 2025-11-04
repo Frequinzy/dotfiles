@@ -1,6 +1,6 @@
 -- Set leader keys
 vim.g.mapleader = ' '
-vim.g.maplocalleadet = '\\'
+vim.g.maplocalleader = ','
 
 -- Disable mouse
 vim.o.mouse = ''
@@ -35,4 +35,7 @@ vim.o.colorcolumn = '80'
 
 -- Set rounded border on floats
 vim.o.winborder = 'rounded'
+
+-- Make vertical splitting to default to right
+vim.o.splitright = true
 
