@@ -3,6 +3,7 @@
 -- Enable Servers, configured in lsp/<name>
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('rust_analyzer')
+vim.lsp.enable('jdtls')
 
 -- Set up LSP functionality
 vim.api.nvim_create_autocmd('LspAttach', {
