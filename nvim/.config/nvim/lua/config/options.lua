@@ -13,7 +13,7 @@ vim.o.relativenumber = true
 vim.o.expandtab = true
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
--- Leave at Default (See `:h ts` for why)
+-- Leave at Default (See `:h tabstop` for why)
 vim.o.tabstop = 8
 
 -- Disable text wrapping

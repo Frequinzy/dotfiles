@@ -9,6 +9,6 @@ return {
       },
     })
   end,
-  ft = { 'clojure', 'fennel', },
+  ft = { 'clojure', 'fennel', 'racket', 'scheme', },
   lazy = true,
 }

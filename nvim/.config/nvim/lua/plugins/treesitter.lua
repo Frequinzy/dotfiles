@@ -1,19 +1,28 @@
 return {
-    'nvim-treesitter/nvim-treesitter',
-    lazy = false,
-    branch = 'master',
-    build = ':TSUpdate',
-    opts = {
-        ensure_installed = { 'lua', 'rust', 'clojure', 'java', 'vim', 'vimdoc' },
-        highlight = {
-          enable = true,
-          additional_vim_regex_highlighting = false,
-        },
-        indent = {
-            enable = true
-        },
-    },
-    config = function (_, opts)
-      require("nvim-treesitter.configs").setup(opts)
-    end
+  'nvim-treesitter/nvim-treesitter',
+  lazy = false,
+  build = ':TSUpdate',
+  config = function ()
+    local parsers = {
+      'lua',
+      'rust',
+      'clojure',
+      'java',
+      'svelte',
+      'typescript',
+      'css',
+      'html',
+      'vim',
+      'vimdoc'
+    }
+
+    require('nvim-treesitter').install(parsers)
+
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = parsers,
+      callback = function()
+        vim.treesitter.start()
+      end,
+    })
+  end
 }

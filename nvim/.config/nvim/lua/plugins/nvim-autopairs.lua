@@ -1,6 +1,6 @@
 return {
   'windwp/nvim-autopairs',
-  ft = { 'clojure', 'fennel', },
+  ft = { 'clojure', 'fennel', 'racket', 'scheme', },
   lazy = true,
   opts = {
     check_ts = true,

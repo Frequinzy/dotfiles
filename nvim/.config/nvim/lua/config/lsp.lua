@@ -5,6 +5,12 @@ vim.lsp.enable('lua_ls')
 vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('jdtls')
 vim.lsp.enable('clojure_lsp')
+vim.lsp.enable('racket_langserver')
+vim.lsp.enable('ts_ls')
+vim.lsp.enable('svelte')
+vim.lsp.enable('tinymist')
+vim.lsp.enable('gleam')
+vim.lsp.enable('gopls')
 
 -- Set up LSP functionality
 vim.api.nvim_create_autocmd('LspAttach', {
