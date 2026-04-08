@@ -1,11 +1,7 @@
-require('config.options')
-require('config.lazy')
-
-vim.api.nvim_create_autocmd('User', {
-    pattern = 'VeryLazy',
-    callback = function()
-        require('config.keymaps')
-        require('config.autocmds')
-        require('config.lsp')
-    end,
+vim.pack.add({
+  {src = "https://github.com/rktjmp/hotpot.nvim",
+   version = vim.version.range("^2.0.0")}
 })
+require("hotpot")
+
+require("config")
