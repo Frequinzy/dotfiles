@@ -1,0 +1,11 @@
+(lambda augroup! [name ...]
+  "Create an augroup"
+  `(let [id# (vim.api.nvim_create_augroup ,(tostring name) {:clear true})]
+     ,(icollect [_ [event opts] (ipairs [...])]
+        `(vim.api.nvim_create_autocmd ,event
+           (vim.tbl_extend :keep {:group id#} ,opts)))))
+
+(lambda autocmd! [event opts]
+  `(vim.api.nvim_create_autocmd ,event ,opts))
+
+{: augroup! : autocmd!}

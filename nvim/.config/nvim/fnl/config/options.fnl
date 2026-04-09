@@ -16,3 +16,5 @@
 (set vim.o.colorcolumn "80")
 
 (set vim.o.splitright true)
+
+(set vim.opt.completeopt ["preinsert" "menu" "menuone" "popup"])

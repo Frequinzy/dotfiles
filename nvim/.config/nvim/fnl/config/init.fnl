@@ -20,16 +20,9 @@
 (oil.setup)
 (vim.keymap.set "n" "-" oil.open)
 
-(local treesitter (require :nvim-treesitter))
-(let [parsers [:fennel :clojure :rust :svelte :typescript :css :html]]
-  (treesitter.install parsers)
-  (vim.api.nvim_create_autocmd :FileType
-                               {:pattern parsers
-                                :callback (fn []
-                                            (vim.treesitter.start))}))
-
 (require :config.lsp)
 (require :config.options)
 (require :config.keymaps)
+(require :config.treesitter)
 
 (vim.cmd.colorscheme :onedark)
