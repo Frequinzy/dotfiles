@@ -1,20 +1,24 @@
 (set vim.g.mapleader " ")
 (set vim.g.maplocalleader ",")
 
-(set vim.o.mouse "")
+(set vim.opt.mouse "")
 
-(set vim.o.number true)
-(set vim.o.relativenumber true)
-(set vim.o.signcolumn :yes)
+(set vim.opt.number true)
+(set vim.opt.relativenumber true)
+(set vim.opt.signcolumn :yes)
 
-(set vim.o.expandtab true)
-(set vim.o.softtabstop 4)
-(set vim.o.shiftwidth 4)
+(set vim.opt.expandtab true)
+(set vim.opt.softtabstop 4)
+(set vim.opt.shiftwidth 4)
 
-(set vim.o.scrolloff 8)
+(set vim.opt.scrolloff 8)
 
-(set vim.o.colorcolumn "80")
+(set vim.opt.colorcolumn "80")
 
-(set vim.o.splitright true)
+(set vim.opt.splitright true)
 
-(set vim.opt.completeopt ["preinsert" "menu" "menuone" "popup"])
+(set vim.o.pumborder :rounded)
+(set vim.o.pummaxwidth 40)
+(set vim.opt.autocomplete true)
+(set vim.o.complete ".,b,w")
+(set vim.opt.completeopt [:preinsert :noinsert :menu :menuone :popup])

@@ -1,11 +1,21 @@
 (lambda augroup! [name ...]
   "Create an augroup"
-  `(let [id# (vim.api.nvim_create_augroup ,(tostring name) {:clear true})]
+  `(let [id# (vim.api.nvim_create_augroup ,name {:clear true})]
      ,(icollect [_ [event opts] (ipairs [...])]
         `(vim.api.nvim_create_autocmd ,event
            (vim.tbl_extend :keep {:group id#} ,opts)))))
 
-(lambda autocmd! [event opts]
-  `(vim.api.nvim_create_autocmd ,event ,opts))
+(lambda defcmd! [name f ?opts]
+  `(vim.api.nvim_create_user_command ,name ,f (or ,?opts {})))
 
-{: augroup! : autocmd!}
+(lambda plugin! [opts]
+  "Registers a plugin to be activated. Expects an opts table with the following information:
+  {:src Mandatory - Source of plugin
+  :version Optional - Specify version
+  :name Optional - Derived as the last part of :src with .nvim removed if not set
+  :setup Optional - Setup function to callback
+  :build Optional - Build instructions
+  :keys Optional - List of keymaps with the map keys :mode, :key, :action, :desc}"
+  `((. (require :core.pack) :add!) ,opts))
+
+{: augroup! : defcmd! : plugin!}
