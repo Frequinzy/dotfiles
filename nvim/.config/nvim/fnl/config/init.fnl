@@ -5,11 +5,12 @@
 (require :config.keymaps)
 
 (augroup! :trailing-whitespace
-  [:BufWritePre
-   {:callback (fn []
-     (let [view (vim.fn.winsaveview)]
-       (vim.cmd "keeppatterns %s/\\s\\+$//e")
-       (vim.fn.winrestview view)))}])
+          [:BufWritePre
+           {:pattern "*"
+            :callback (fn []
+                        (let [view (vim.fn.winsaveview)]
+                          (vim.cmd "keeppatterns %s/\\s\\+$//e")
+                          (vim.fn.winrestview view)))}])
 
 (let [{: require-dir!} (require :core.util)]
   (require-dir! :plugins))

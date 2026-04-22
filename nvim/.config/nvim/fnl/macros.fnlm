@@ -3,7 +3,7 @@
   `(let [id# (vim.api.nvim_create_augroup ,name {:clear true})]
      ,(icollect [_ [event opts] (ipairs [...])]
         `(vim.api.nvim_create_autocmd ,event
-           (vim.tbl_extend :keep {:group id#} ,opts)))))
+                                      (vim.tbl_extend :keep {:group id#} ,opts)))))
 
 (lambda defcmd! [name f ?opts]
   `(vim.api.nvim_create_user_command ,name ,f (or ,?opts {})))

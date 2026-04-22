@@ -1,22 +1,20 @@
 (import-macros {: plugin!} :macros)
 (local {: gh} (require :core.util))
 
-(plugin! {:src (gh "chomosuke/typst-preview.nvim")
-          :setup (fn [tp] (tp.setup {:open_cmd "firefox %s -P typst-preview --class typst-preview"
-                                    :follow_cursor true
-                                    :dependencies_bin {:tinymist "tinymist"}}))
-          :keys [
-                 {:mode "n"
-                  :key "<leader>ts"
+(plugin! {:src (gh :chomosuke/typst-preview.nvim)
+          :setup (fn [tp]
+                   (tp.setup {:open_cmd "firefox %s -P typst-preview --class typst-preview"
+                              :follow_cursor true
+                              :dependencies_bin {:tinymist :tinymist}}))
+          :keys [{:mode :n
+                  :key :<leader>ts
                   :action (fn [tp] tp.sync_with_cursor)
                   :desc "Sync Typst preview with cursor"}
-                 {:mode "n"
-                  :key "<leader>tf"
+                 {:mode :n
+                  :key :<leader>tf
                   :action (fn [_] #(vim.cmd :TypstPreviewFollowCursorToggle))
                   :desc "Toggle follow cursor"}
-                 {:mode "n"
-                  :key "<leader>tt"
+                 {:mode :n
+                  :key :<leader>tt
                   :action (fn [_] #(vim.cmd :TypstPreview))
-                  :desc "Toggle Typst preview"}
-                ]
-          })
+                  :desc "Toggle Typst preview"}]})
