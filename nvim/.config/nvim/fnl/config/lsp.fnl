@@ -1,11 +1,11 @@
 (import-macros {: augroup!} :macros)
 
-(vim.lsp.config :tinymist {:settings {:projectResolution :lockDatabase}})
-
 (vim.lsp.enable :fennel_ls)
 (vim.lsp.enable :ts_ls)
 (vim.lsp.enable :svelte)
 (vim.lsp.enable :tinymist)
+
+(vim.lsp.config :tinymist {:settings {:projectResolution :lockDatabase}})
 
 (augroup! :lsp
           [:LspAttach
