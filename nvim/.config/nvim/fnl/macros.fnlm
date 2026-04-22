@@ -11,11 +11,11 @@
 (lambda plugin! [opts]
   "Registers a plugin to be activated. Expects an opts table with the following information:
   {:src Mandatory - Source of plugin
-  :version Optional - Specify version
-  :name Optional - Derived as the last part of :src with .nvim removed if not set
-  :setup Optional - Setup function to callback
-  :build Optional - Build instructions
-  :keys Optional - List of keymaps with the map keys :mode, :key, :action, :desc}"
+   :version Optional - Specify version
+   :name Optional - Derived as the last part of :src with .nvim removed if not set
+   :setup Optional - Setup function to callback
+   :build Optional - Build instructions
+   :keys Optional - List of keymaps with the map keys :mode, :key, :action, :desc}"
   `((. (require :core.pack) :add!) ,opts))
 
 {: augroup! : defcmd! : plugin!}
