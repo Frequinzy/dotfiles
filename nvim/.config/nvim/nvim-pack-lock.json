@@ -1,5 +1,13 @@
 {
   "plugins": {
+    "conform.nvim": {
+      "rev": "086a40dc7ed8242c03be9f47fbcee68699cc2395",
+      "src": "https://github.com/stevearc/conform.nvim"
+    },
+    "fzf-lua": {
+      "rev": "69b0d5d045cc039e68ba4c82190ce471464226b6",
+      "src": "https://github.com/ibhagwan/fzf-lua"
+    },
     "hotpot.nvim": {
       "rev": "445ab013c73f48b75cb634be963da8481a97a056",
       "src": "https://github.com/rktjmp/hotpot.nvim",
