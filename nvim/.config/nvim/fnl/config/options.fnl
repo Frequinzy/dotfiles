@@ -14,6 +14,7 @@
 (set vim.opt.expandtab true)
 (set vim.opt.softtabstop 4)
 (set vim.opt.shiftwidth 4)
+(set vim.opt.tabstop 4)
 
 ; Complete menu
 (set vim.opt.pumborder :rounded)

@@ -8,9 +8,11 @@
                                                  :javascript [:prettier]
                                                  :typescript [:prettier]
                                                  :svelte [:prettier]
-                                                 :go [:gofmt]}}))
+                                                 :go [:gofmt]
+                                                 :templ {:templ {:command "go tool templ fmt"}}
+                                                 :sql [:pg_format]}}))
           :keys [{:mode :n
-                  :key :<leader>cf
+                  :key :<leader>c
                   :action (fn [cf]
                             #(cf.format {:async true :lsp_fallback true}))
                   :desc "Format buffer"}]})
