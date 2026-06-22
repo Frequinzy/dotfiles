@@ -4,14 +4,13 @@
 (vim.lsp.enable :ts_ls)
 (vim.lsp.enable :svelte)
 (vim.lsp.enable :tinymist)
+(vim.lsp.enable :rust_analyzer)
+(vim.lsp.enable :gopls)
+(vim.lsp.enable :templ)
+(vim.lsp.enable :posgres_lsp)
 
-(vim.lsp.config :tinymist {:settings {:projectResolution :lockDatabase}})
+(vim.lsp.config :tinymist
+                {:settings {:projectResolution :lockDatabase}
+                 :root_markers [:main.typ :tinymist.lock :.git]})
 
-(augroup! :lsp
-          [:LspAttach
-           {:callback (fn [args]
-                        (let [client (assert (vim.lsp.get_client_by_id args.data.client_id)
-                                             "Failed to find client_id")]
-                          (when (client:supports_method :textDocument/completion)
-                            (vim.lsp.completion.enable true client.id args.buf
-                                                       {:autotrigger true}))))}])
+(vim.lsp.config :templ {:cmd [:go :tool :templ :lsp]})

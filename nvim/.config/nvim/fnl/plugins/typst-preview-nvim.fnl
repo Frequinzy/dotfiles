@@ -3,8 +3,9 @@
 
 (plugin! {:src (gh :chomosuke/typst-preview.nvim)
           :setup (fn [tp]
-                   (tp.setup {:open_cmd "firefox %s -P typst-preview --class typst-preview"
+                   (tp.setup {:open_cmd "firefox %s -P typst-preview --new-instance --class typst-preview"
                               :follow_cursor true
+                              :extra_args [:--verbose]
                               :dependencies_bin {:tinymist :tinymist}}))
           :keys [{:mode :n
                   :key :<leader>ts
