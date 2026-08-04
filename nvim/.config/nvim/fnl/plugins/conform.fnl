@@ -10,7 +10,8 @@
                                                  :svelte [:prettier]
                                                  :go [:gofmt]
                                                  :templ {:templ {:command "go tool templ fmt"}}
-                                                 :sql [:pg_format]}}))
+                                                 :sql [:pg_format]
+                                                 :python [:ruff_format]}}))
           :keys [{:mode :n
                   :key :<leader>c
                   :action (fn [cf]
