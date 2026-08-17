@@ -1,3 +1,5 @@
+(local {: copy-ref} (require :core.util))
+
 (vim.keymap.set [:n :v] :<leader>p "\"+p" {:desc "Paste from system clipboard"})
 (vim.keymap.set [:n :v] :<leader>P "\"+P"
                 {:desc "Paste above from system clipboard"})
@@ -8,3 +10,6 @@
 
 (vim.keymap.set :n :<leader>dd vim.diagnostic.open_float
                 {:desc "Open diagnostic float"})
+
+(vim.keymap.set :n :<leader>cp #(copy-ref {}))
+(vim.keymap.set :v :<leader>cp #(copy-ref {:visual true}))

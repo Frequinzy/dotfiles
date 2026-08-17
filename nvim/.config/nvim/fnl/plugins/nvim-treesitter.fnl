@@ -4,7 +4,8 @@
 (fn try-attach [buf lang]
   (when (vim.treesitter.language.add lang)
     (vim.treesitter.start buf lang)
-    (set vim.bo.indentexpr "v:lua.require'nvim-treesitter'.indentexpr()") ; Is evaluated as a vimscript string. `v:lua` is an escape hatch to lua.
+    (when (not (vim.tbl_contains [:dart] lang))
+      (set vim.bo.indentexpr "v:lua.require'nvim-treesitter'.indentexpr()"))
     true))
 
 (plugin! {:src (gh :nvim-treesitter/nvim-treesitter)

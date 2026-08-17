@@ -11,7 +11,10 @@
                                                  :go [:gofmt]
                                                  :templ {:templ {:command "go tool templ fmt"}}
                                                  :sql [:pg_format]
-                                                 :python [:ruff_format]}}))
+                                                 :python [:ruff_format]
+                                                 :haskell [:ormolu]
+                                                 :dart [:dart_format]
+                                                 :typst [:typstyle]}}))
           :keys [{:mode :n
                   :key :<leader>c
                   :action (fn [cf]

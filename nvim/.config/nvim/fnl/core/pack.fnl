@@ -67,10 +67,23 @@
 (fn add-keybinds [specs]
   (each [_ spec (ipairs specs)]
     (when spec.keys
-      (let [module (require spec.name)]
+      (let [module (require spec.name)
+            group (vim.api.nvim_create_augroup (.. :keybinds_ spec.name)
+                                               {:clear true})]
         (each [_ km (ipairs spec.keys)]
-          (vim.keymap.set km.mode km.key (km.action module)
-                          {:desc km.desc :silent true}))))))
+          (if km.ft
+              (vim.api.nvim_create_autocmd :FileType
+                                           {: group
+                                            :pattern km.ft
+                                            :callback (fn [args]
+                                                        (vim.keymap.set km.mode
+                                                                        km.key
+                                                                        (km.action module)
+                                                                        {:desc km.desc
+                                                                         :silent true
+                                                                         :buffer args.buf}))})
+              (vim.keymap.set km.mode km.key (km.action module)
+                              {:desc km.desc :silent true})))))))
 
 (fn bootstrap! []
   (sort-by-priority registry)

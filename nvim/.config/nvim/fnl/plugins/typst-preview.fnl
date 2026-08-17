@@ -9,13 +9,16 @@
                               :dependencies_bin {:tinymist :tinymist}}))
           :keys [{:mode :n
                   :key :<leader>ts
+                  :ft :typst
                   :action (fn [tp] tp.sync_with_cursor)
                   :desc "Sync Typst preview with cursor"}
                  {:mode :n
                   :key :<leader>tf
+                  :ft :typst
                   :action (fn [_] #(vim.cmd :TypstPreviewFollowCursorToggle))
                   :desc "Toggle follow cursor"}
                  {:mode :n
                   :key :<leader>tt
+                  :ft :typst
                   :action (fn [_] #(vim.cmd :TypstPreview))
                   :desc "Toggle Typst preview"}]})

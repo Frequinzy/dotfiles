@@ -5,7 +5,8 @@
           :setup (fn [fzf]
                    (fzf.setup {:winopts {:border :rounded
                                          :preview {:layout :vertical
-                                                   :vertical "down:50%"}}}))
+                                                   :vertical "down:50%"}}})
+                   (fzf.register_ui_select))
           :keys [{:mode :n
                   :key :<leader>ff
                   :action (fn [fzf] #(fzf.files))
