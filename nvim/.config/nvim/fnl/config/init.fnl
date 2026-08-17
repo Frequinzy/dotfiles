@@ -3,6 +3,7 @@
 (require :config.options)
 (require :config.keymaps)
 (require :config.lsp)
+(require :diff-review)
 
 (augroup! :trailing-whitespace
           [:BufWritePre
