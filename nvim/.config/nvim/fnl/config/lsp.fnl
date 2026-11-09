@@ -11,6 +11,7 @@
 (vim.lsp.enable :templ)
 (vim.lsp.enable :posgres_lsp)
 (vim.lsp.enable :hls)
+(vim.lsp.enable :clangd)
 
 (vim.lsp.config :tinymist
                 {:settings {:projectResolution :lockDatabase}
