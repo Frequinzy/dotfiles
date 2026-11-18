@@ -9,7 +9,6 @@
         normal
         visual)))
 
-(vim.keymap.set [:n :v] :<leader>p "\"+p" {:desc "Paste from system clipboard"})
 (vim.keymap.set [:n :x] :j (vmove :j :gj)
                 {:buffer true :expr true :silent true})
 

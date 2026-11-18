@@ -1,20 +1,13 @@
-(import-macros {: augroup!} :macros)
-
 (vim.lsp.document_color.enable true)
 
-(vim.lsp.enable :fennel_ls)
-(vim.lsp.enable :ts_ls)
-(vim.lsp.enable :svelte)
-(vim.lsp.enable :tinymist)
-(vim.lsp.enable :rust_analyzer)
-(vim.lsp.enable :gopls)
-(vim.lsp.enable :templ)
-(vim.lsp.enable :posgres_lsp)
-(vim.lsp.enable :hls)
-(vim.lsp.enable :clangd)
-
-(vim.lsp.config :tinymist
-                {:settings {:projectResolution :lockDatabase}
-                 :root_markers [:main.typ :tinymist.lock :.git]})
-
-(vim.lsp.config :templ {:cmd [:go :tool :templ :lsp]})
+(vim.lsp.enable [:clangd
+                 :fennel_ls
+                 :gopls
+                 :hls
+                 :marksman
+                 :postgres_lsp
+                 :rust_analyzer
+                 :svelte
+                 :templ
+                 :tinymist
+                 :ts_ls])
